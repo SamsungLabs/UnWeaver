@@ -1,0 +1,97 @@
+[tool.poetry]
+name = "unweaver"
+version = "0.1.0"
+description = ""
+authors = ["Ryszard Tuora, Mateusz Galiński"]
+readme = "README.md"
+
+
+[tool.poetry-exec-plugin.commands]
+black = "black --check --diff unweaver/"
+blackf = "black unweaver/"
+isort = "isort --profile=black --check-only --diff unweaver/"
+isortf = "isort --profile=black unweaver/"
+mypy = "mypy --ignore-missing-imports --check-untyped-defs unweaver/"
+pylint = "pylint --rcfile=pyproject.toml unweaver/"
+
+
+[tool.poetry.dependencies]
+python = ">=3.10,<3.13"
+json-repair = "0.30.2"
+lancedb = "0.24.3"
+mlflow = "2.20.2"
+more-itertools = "10.5.0"
+numpy = "2.2.6"
+openai = "2.15.0"
+pandas = "2.3.3"
+pyarrow = "18.1.0"
+pydantic = "2.12.5"
+pymongo = "4.10.1"
+pytablewriter = "1.2.1"
+rich = "14.1.0"
+tenacity = "9.0.0"
+torch = { version = "2.7.1+cu128", source = "torch" }
+tqdm = "4.67.1"
+transformers = "4.51.0"
+
+[tool.poetry.group.dev]
+optional = true
+
+[tool.poetry.group.dev.dependencies]
+black = "24.10.0"
+pylint = "4.0.3"
+mypy = "1.13.0"
+isort = "5.13.2"
+ipython = "7.12.0"
+
+
+[[tool.poetry.source]]
+name = "PyPI"
+priority = "primary"
+
+[[tool.poetry.source]]
+name = "torch"
+url = "https://download.pytorch.org/whl/cu128"
+priority = "supplemental"
+
+
+[tool.pylint.main]
+fail-under = 10
+
+[tool.pylint.basic]
+good-names = ["i", "j", "k", "ex", "Run", "_", "x", "x_", "fp", "fh"]
+
+[tool.pylint.design]
+max-args = 12
+max-attributes = 16
+max-branches = 15
+max-locals = 24
+max-positional-arguments = 8
+min-public-methods = 1
+
+[tool.pylint."messages control"]
+disable = [
+    "raw-checker-failed",
+    "bad-inline-option",
+    "locally-disabled",
+    "file-ignored",
+    "suppressed-message",
+    "useless-suppression",
+    "deprecated-pragma",
+    "use-symbolic-message-instead",
+    "use-implicit-booleaness-not-comparison-to-string",
+    "use-implicit-booleaness-not-comparison-to-zero",
+    "missing-module-docstring",
+    "missing-class-docstring",
+    "missing-function-docstring",
+    "fixme",
+    "duplicate-code",
+]
+
+[tool.isort]
+profile = "black"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

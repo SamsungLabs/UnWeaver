@@ -1,0 +1,103 @@
+{
+  "general": {
+    "use_cache_llm": true,
+    "use_cache_embedder": false,
+    "use_which_system": "unweaver",
+    "vector_storage_name": "lancedb",
+    "remote_mlflow_uri": "http://IP_ADDRESS:PORT/",
+    "experiment_name_index": "Unweaver Indexing",
+    "experiment_name_query": "Unweaver Querying",
+    "llm": {
+      "max_async": 8,
+      "base_urls": [
+        "http://IP_ADDRESS:PORT1/v1",
+        "http://IP_ADDRESS:PORT2/v1",
+        "http://IP_ADDRESS:PORT3/v1",
+        "http://IP_ADDRESS:PORT4/v1"
+      ],
+      "api_keys": [
+        [
+          "somekey-4321"
+        ],
+        [
+          "somekey-4321"
+        ],
+        [
+          "somekey-4321"
+        ],
+        [
+          "somekey-4321"
+        ]
+      ],
+      "model": "openai/gpt-oss-120b",
+      "timeout": 300,
+      "max_token_size": 32768,
+      "postprocess_thinking": true,
+      "enable_thinking": false
+    },
+    "tokenizer": {
+      "model": "openai/gpt-oss-120b"
+    },
+    "embedder": {
+      "max_async": 8,
+      "base_urls": [
+        "http://IP_ADDRESS:PORT1",
+        "http://IP_ADDRESS:PORT2",
+        "http://IP_ADDRESS:PORT3",
+        "http://IP_ADDRESS:PORT4"
+      ],
+      "api_keys": [
+        [
+          "somekey-4321"
+        ],
+        [
+          "somekey-4321"
+        ],
+        [
+          "somekey-4321"
+        ],
+        [
+          "somekey-4321"
+        ]
+      ],
+      "model": "Qwen/Qwen3-Embedding-4B",
+      "embedding_dim": 2560,
+      "max_token_size": 40960,
+      "batch_size": 32,
+      "timeout": 300
+    },
+    "prompts": {
+      "extraction_prompt_template": "prompts/extraction.txt",
+      "querying_prompt_template": "prompts/query.txt",
+      "summarization_prompt_template": "prompts/summarization.txt",
+      "no_data_response": "prompts/no_data_response.txt"
+    }
+  },
+  "query": {
+    "mock_retrieval": false,
+    "retrieval_methods": [
+      "unweaver"
+    ],
+    "naive": {
+      "retrieve_top_k": 5,
+      "chunks_max_token_size": 4000,
+      "chunks_table_format": "csv"
+    },
+    "unweaver": {
+      "retrieve_top_k_ents": 10,
+      "retrieve_top_k_chunks": 5,
+      "chunks_max_token_size": 4000,
+      "chunks_table_format": "csv"
+    }
+  },
+  "index": {
+    "chunker": {
+      "strategy": "by_token_size",
+      "max_token_size": 1500,
+      "overlap_token_size": 128
+    },
+    "extraction": {
+      "summarization_threshold": 4000
+    }
+  }
+}

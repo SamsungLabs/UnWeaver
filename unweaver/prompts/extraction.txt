@@ -1,0 +1,31 @@
+Please extract a list of key entities from the following piece of text, each entity
+should be assigned a description, which specifies it's inherent characteristics,
+as well as its function, and relations with other objects.
+
+Format your output as a JSON list of dictionaries with "entity_name"
+and "entity_description" as keys, and string values. Each entity should be described
+in up to three sentences.
+
+Generate as many entities as needed, to describe the important information
+contained in the document.
+
+EXAMPLE OUTPUT:
+```json
+[
+  {{
+    "entity_name": "entity_1",
+    "entity_description": "some description",
+  }},
+  {{
+    "entity_name": "entity_2",
+    "entity_description": "a different description",
+  }},
+  {{
+    "entity_name": "entity_3",
+    "entity_description": "another description",
+  }}
+]
+```
+
+TEXT:
+{input_text}

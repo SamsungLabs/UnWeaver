@@ -1,0 +1,39 @@
+{
+  "remote_mlflow_uri": "http://IP_ADDRESS:PORT/",
+  "experiment_name": "UnweaverRAGEval",
+  "num_repeats": 3,
+  "metrics": [
+    "factual_correctness"
+  ],
+  "llm": {
+    "base_urls": [
+      "http://IP_ADDRESS:PORT/v1"
+    ],
+    "api_keys": [
+      [
+        "somekey-4321"
+      ]
+    ],
+    "model": "openai/gpt-oss-120b",
+    "timeout": 300,
+    "max_retries": 10,
+    "max_workers": 128
+  },
+  "embedder": {
+    "max_async": 8,
+    "mode": "remote",
+    "base_urls": [
+      "http://IP_ADDRESS:PORT"
+    ],
+    "api_keys": [
+      [
+        "somekey-4321"
+      ]
+    ],
+    "model": "Qwen/Qwen3-Embedding-4B",
+    "embedding_dim": 2560,
+    "max_token_size": 32768,
+    "batch_size": 1,
+    "timeout": 300
+  }
+}

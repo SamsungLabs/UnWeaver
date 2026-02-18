@@ -1,0 +1,77 @@
+[tool.poetry]
+name = "data_preprocessing"
+version = "0.1.0"
+description = ""
+authors = ["Mateusz Galiński, Ryszard Tuora"]
+readme = "README.md"
+
+
+[tool.poetry-exec-plugin.commands]
+black = "black --check --diff data_preprocessing/"
+blackf = "black data_preprocessing/"
+isort = "isort --profile=black --check-only --diff data_preprocessing/"
+isortf = "isort --profile=black data_preprocessing/"
+mypy = "mypy --ignore-missing-imports --check-untyped-defs data_preprocessing/"
+pylint = "pylint --rcfile=pyproject.toml data_preprocessing/"
+
+
+[tool.poetry.dependencies]
+python = ">=3.10,<3.13"
+aiofiles = "24.1.0"
+python-dateutil = "2.9.0.post0"
+tqdm = "4.67.1"
+more-itertools = "10.8.0"
+datasets = "4.5.0"
+
+[tool.poetry.group.dev]
+optional = true
+
+[tool.poetry.group.dev.dependencies]
+black = "25.1.0"
+isort = "6.0.1"
+mypy = "1.15.0"
+pylint = "3.3.6"
+types-aiofiles = "24.1.0.20250326"
+types-python-dateutil = "2.9.0.20241206"
+
+
+[tool.pylint.main]
+fail-under = 10
+
+[tool.pylint.basic]
+good-names = ["i", "j", "k", "ex", "Run", "_", "x", "x_", "fp", "fh"]
+
+[tool.pylint.design]
+max-args = 12
+max-attributes = 16
+max-locals = 24
+max-positional-arguments = 8
+min-public-methods = 1
+
+[tool.pylint."messages control"]
+disable = [
+    "raw-checker-failed",
+    "bad-inline-option",
+    "locally-disabled",
+    "file-ignored",
+    "suppressed-message",
+    "useless-suppression",
+    "deprecated-pragma",
+    "use-symbolic-message-instead",
+    "use-implicit-booleaness-not-comparison-to-string",
+    "use-implicit-booleaness-not-comparison-to-zero",
+    "missing-module-docstring",
+    "missing-class-docstring",
+    "missing-function-docstring",
+]
+
+[tool.pylint.similarities]
+min-similarity-lines = 24
+
+[tool.isort]
+profile = "black"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

@@ -1,0 +1,12 @@
+You will be given a long concatenated description of an entity. Your task is to summarize the description into single, brief and coherent description.
+Please output the result as a JSON formatted list with its entry being the summarized description.
+
+EXAMPLE OUTPUT
+```json
+["Summarized description of entity"]
+```
+
+INPUT:
+entity: {entity}
+description: {description}
+

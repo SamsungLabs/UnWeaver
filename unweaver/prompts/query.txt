@@ -1,0 +1,9 @@
+Please answer the following question:
+
+{question}
+
+Do so based on the following context:
+
+{context}
+
+Please make sure that the answer is correct and complete. At the same time avoid redundancy and irrelevant information, and be concise: answer using a single sentence.
