@@ -1,6 +1,12 @@
 # UnWeaving the knots of GraphRAG - turns out VectorRAG is almost enough
 
-This repository contains the implementation for the arXiv paper "UnWeaving the knots of GraphRAG - turns out VectorRAG is almost enough". The project presents UnWeaver, a novel approach to Retrieval-Augmented Generation (RAG) that challenges the conventional wisdom of using graph-based knowledge representations.
+This repository contains the implementation for the paper "UnWeaving the knots of GraphRAG - turns out VectorRAG is almost enough". The project presents UnWeaver, a novel approach to Retrieval-Augmented Generation (RAG) that challenges the conventional wisdom of using graph-based knowledge representations.
+
+## Architecture of UnWeaver
+
+![UnWeaver Flow](figures/unweaver_flow.jpg)
+
+The diagram above illustrates the flow of data through the UnWeaver system, showing how documents are processed, indexed, and retrieved for question answering.
 
 ## Overview
 
