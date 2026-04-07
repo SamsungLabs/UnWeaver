@@ -157,10 +157,13 @@ If you use this code in your research, please cite our paper:
 
 ```bibtex
 @article{unweaver2026,
-  title={UnWeaving the knots of GraphRAG - turns out VectorRAG is almost enough},
-  author={Ryszard Tuora, Mateusz Galiński, Michał Godziszewski, Michał Karpowicz, Mateusz Czyżnikiewicz, Adam Kozakiewicz, Tomasz Ziętkiewicz},
-  journal={arXiv preprint arXiv:XXXX.XXXXX},
-  year={2026}
+      title={UnWeaving the knots of GraphRAG -- turns out VectorRAG is almost enough}, 
+      author={Ryszard Tuora and Mateusz Galiński and Michał Godziszewski and Michał Karpowicz and Mateusz Czyżnikiewicz and Adam Kozakiewicz and Tomasz Ziętkiewicz},
+      year={2026},
+      eprint={2603.29875},
+      archivePrefix={arXiv},
+      primaryClass={cs.IR},
+      url={https://arxiv.org/abs/2603.29875}, 
 }
 ```
 
